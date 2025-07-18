@@ -17,6 +17,7 @@ export interface Issue {
 	createdAt: Date;
 	updatedAt?: Date;
 	comments: Comment[];
+	blogPostId?: string; // Optional reference to a blog post
 }
 
 export const issues: Issue[] = [

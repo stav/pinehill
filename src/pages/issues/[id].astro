@@ -4,6 +4,7 @@ import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE_TITLE } from '@/consts';
 import { issues, type Comment, type Issue } from '@/data/issues';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
 	return issues.map((issue: Issue) => ({
@@ -16,6 +17,20 @@ const issue = issues.find((issue: Issue) => issue.id === parseInt(id!));
 
 if (!issue) {
 	return Astro.redirect('/issues');
+}
+
+// Fetch blog post content if issue has a blogPostId
+let blogPostContent: any = null;
+if (issue.blogPostId) {
+	try {
+		const blogPost = await getCollection('blog', ({ id }) => id === issue.blogPostId);
+		if (blogPost.length > 0) {
+			const { Content } = await render(blogPost[0]);
+			blogPostContent = { post: blogPost[0], Content };
+		}
+	} catch (error) {
+		console.warn(`Blog post ${issue.blogPostId} not found for issue ${issue.id}`);
+	}
 }
 
 const getStatusColor = (status: string) => {
@@ -78,6 +93,21 @@ const getPriorityColor = (priority: string) => {
 					<div class="prose max-w-none mb-6">
 						<p class="text-gray-700 whitespace-pre-line">{issue.description}</p>
 					</div>
+
+					{/* Blog Post Content */}
+					{blogPostContent && (
+						<div class="border-t border-gray-200 pt-6 mb-6">
+							<div class="flex items-center mb-4">
+								<h3 class="text-lg font-semibold text-gray-900">Related Blog Post</h3>
+								<a href={`/blog/${blogPostContent.post.id}`} class="ml-2 text-sm text-primary-600 hover:text-primary-700">
+									View full post →
+								</a>
+							</div>
+							<div class="prose max-w-none">
+								<blogPostContent.Content />
+							</div>
+						</div>
+					)}
 
 					<div class="border-t border-gray-200 pt-6">
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
