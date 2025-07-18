@@ -13,7 +13,7 @@ export interface Issue {
 	status: 'open' | 'in-progress' | 'completed' | 'closed';
 	priority: 'urgent' | 'high' | 'medium' | 'low';
 	author: string;
-	assignedTo?: string;
+	assignedTo?: string | null;
 	createdAt: Date;
 	updatedAt?: Date;
 	comments: Comment[];
@@ -24,13 +24,14 @@ export const issues: Issue[] = [
 	{
 		id: 1,
 		title: "Front step - sloped toward house, collecting water",
-		description: "The front step is sloped toward the house and collecting water, creating potential foundation issues. Need to fix the slope to direct water away from the house.\n\n**Current Issues:**\n- Water pooling against foundation\n- Potential for foundation damage\n- Safety hazard with slippery surface\n- Mold/mildew growth possible\n\n**Proposed Solution:**\n- Re-grade the step to slope away from house\n- Ensure proper drainage\n- May need to add drainage channel\n- Consider non-slip surface treatment\n\n**Priority:** High - Foundation water issues can cause serious damage if not addressed promptly.",
+		description: "The front step is sloped toward the house and collecting water, creating potential foundation issues.",
 		status: "open",
 		priority: "high",
-		author: "Pine Hill Resident",
-		assignedTo: "Maintenance Team",
+		author: "Steve Almeroth",
+		assignedTo: null,
 		createdAt: new Date("2024-01-15"),
 		updatedAt: new Date("2024-01-18"),
+		blogPostId: "front-step-sloped",
 		comments: [
 			{
 				id: 1,
