@@ -2,7 +2,7 @@ export interface Comment {
 	id: number;
 	content: string;
 	author: string;
-	createdAt: Date;
+	createdAt: string;
 	replies: Comment[];
 }
 
@@ -14,8 +14,8 @@ export interface Issue {
 	priority: 'urgent' | 'high' | 'medium' | 'low';
 	author: string;
 	assignedTo?: string | null;
-	createdAt: Date;
-	updatedAt?: Date;
+	createdAt: string;
+	updatedAt?: string;
 	comments: Comment[];
 	blogPostId?: string; // Optional reference to a blog post
 }
@@ -29,21 +29,21 @@ export const issues: Issue[] = [
 		priority: "high",
 		author: "Steve Almeroth",
 		assignedTo: null,
-		createdAt: new Date("2024-01-15"),
-		updatedAt: new Date("2024-01-18"),
+		createdAt: "2025-07-15",
+		updatedAt: "2025-07-18",
 		blogPostId: "front-step-sloped",
 		comments: [
 			{
 				id: 1,
 				content: "I've noticed this issue too. The water pooling is definitely a concern for the foundation. We should prioritize this fix.",
 				author: "Pine Hill Resident",
-				createdAt: new Date("2024-01-16"),
+				createdAt: "2025-07-16",
 				replies: [
 					{
 						id: 2,
 						content: "Agreed. I can help coordinate with a contractor to get this fixed. We should also check if there are any drainage issues in the surrounding area.",
 						author: "Maintenance Team",
-						createdAt: new Date("2024-01-17"),
+						createdAt: "2025-07-17",
 						replies: []
 					}
 				]
@@ -52,7 +52,7 @@ export const issues: Issue[] = [
 				id: 3,
 				content: "I have a contact for a good concrete contractor who specializes in foundation drainage. Should I reach out to them for a quote?",
 				author: "Pine Hill Resident",
-				createdAt: new Date("2024-01-18"),
+				createdAt: "2025-07-18",
 				replies: []
 			}
 		]
@@ -64,7 +64,7 @@ export const issues: Issue[] = [
 		status: "open",
 		priority: "medium",
 		author: "Pine Hill Resident",
-		createdAt: new Date("2024-01-12"),
+		createdAt: "2025-07-12",
 		comments: []
 	},
 	{
@@ -74,7 +74,7 @@ export const issues: Issue[] = [
 		status: "open",
 		priority: "medium",
 		author: "Pine Hill Resident",
-		createdAt: new Date("2024-01-10"),
+		createdAt: "2025-07-10",
 		comments: []
 	},
 	{
@@ -84,7 +84,7 @@ export const issues: Issue[] = [
 		status: "in-progress",
 		priority: "low",
 		author: "Pine Hill Resident",
-		createdAt: new Date("2024-01-08"),
+		createdAt: "2025-07-08",
 		comments: []
 	},
 	{
@@ -94,7 +94,7 @@ export const issues: Issue[] = [
 		status: "open",
 		priority: "low",
 		author: "Pine Hill Resident",
-		createdAt: new Date("2024-01-05"),
+		createdAt: "2025-07-05",
 		comments: []
 	}
 ]; 
