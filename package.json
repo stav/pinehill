@@ -2,6 +2,8 @@
   "name": "electrical-escape",
   "type": "module",
   "version": "0.0.1",
+  "description": "A community portal for Pine Hill work orders and collaboration",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,7 +14,23 @@
     "@astrojs/mdx": "^4.3.1",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/tailwind": "^6.0.0",
     "astro": "^5.12.0",
-    "sharp": "^0.34.2"
-  }
+    "sharp": "^0.34.2",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "lucide-astro": "^0.263.0"
+  },
+  "keywords": [
+    "community",
+    "electrical",
+    "blog",
+    "work-orders",
+    "collaboration"
+  ],
+  "author": {
+    "name": "Electrical Escape Team"
+  },
+  "license": "MIT"
 }
