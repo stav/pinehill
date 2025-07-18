@@ -2,7 +2,7 @@
   "name": "pinehill",
   "type": "module",
   "version": "0.0.1",
-  "description": "A community portal for Pine Hill work orders and collaboration",
+  "description": "A community portal for Pine Hill project collaboration",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -24,9 +24,9 @@
   },
   "keywords": [
     "community",
-    "electrical",
+    "projects",
     "blog",
-    "work-orders",
+    "issues",
     "collaboration"
   ],
   "author": {

@@ -3,53 +3,20 @@ import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE_TITLE } from '@/consts';
+import { issues } from '@/data/issues';
 
 export async function getStaticPaths() {
-	// Mock data - will be replaced with database queries
-	return [
-		{ params: { id: '1' } },
-		{ params: { id: '2' } },
-		{ params: { id: '3' } }
-	];
+	return issues.map((issue) => ({
+		params: { id: issue.id.toString() }
+	}));
 }
 
 const { id } = Astro.params;
+const issue = issues.find(issue => issue.id === parseInt(id!));
 
-// Mock data for now - will be replaced with database queries
-const workOrder = {
-	id: parseInt(id!),
-	title: "Install new circuit breaker panel",
-	description: "Need to upgrade the main electrical panel to support additional circuits for the workshop expansion. The current panel is at capacity and we need to add several new circuits for new equipment. This includes:\n\n- 220V circuit for new welder\n- 110V circuits for additional lighting\n- Dedicated circuit for air compressor\n- GFCI circuits for workshop outlets\n\nThe new panel should be rated for at least 200A service to accommodate future expansion.",
-	status: "open",
-	priority: "high",
-	author: "John Smith",
-	assignedTo: "Mike Davis",
-	createdAt: new Date("2024-01-15"),
-	updatedAt: new Date("2024-01-18"),
-	comments: [
-		{
-			id: 1,
-			content: "I can help with this installation. We'll need to coordinate with the utility company for the service upgrade.",
-			author: "Mike Davis",
-			createdAt: new Date("2024-01-16"),
-			replies: [
-				{
-					id: 2,
-					content: "Great! I've already contacted the utility company. They said it will take 2-3 weeks for the service upgrade.",
-					author: "John Smith",
-					createdAt: new Date("2024-01-17")
-				}
-			]
-		},
-		{
-			id: 3,
-			content: "Make sure to get the proper permits for this work. Electrical panel upgrades usually require inspection.",
-			author: "Sarah Johnson",
-			createdAt: new Date("2024-01-18"),
-			replies: []
-		}
-	]
-};
+if (!issue) {
+	return Astro.redirect('/issues');
+}
 
 const getStatusColor = (status: string) => {
 	switch (status) {
@@ -75,7 +42,7 @@ const getPriorityColor = (priority: string) => {
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${workOrder.title} - ${SITE_TITLE}`} description={workOrder.description.substring(0, 160)} />
+		<BaseHead title={`${issue.title} - ${SITE_TITLE}`} description={issue.description.substring(0, 160)} />
 	</head>
 	<body>
 		<Header />
@@ -83,22 +50,22 @@ const getPriorityColor = (priority: string) => {
 			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				<!-- Breadcrumb -->
 				<nav class="mb-8">
-					<a href="/work-orders" class="text-primary-600 hover:text-primary-700">
-						← Back to Work Orders
+					<a href="/issues" class="text-primary-600 hover:text-primary-700">
+						← Back to Issues
 					</a>
 				</nav>
 
-				<!-- Work Order Details -->
+				<!-- Issue Details -->
 				<div class="card mb-8">
 					<div class="flex flex-col sm:flex-row sm:items-start justify-between mb-6">
 						<div class="flex-1">
-							<h1 class="text-3xl font-bold text-gray-900 mb-4">{workOrder.title}</h1>
+							<h1 class="text-3xl font-bold text-gray-900 mb-4">{issue.title}</h1>
 							<div class="flex flex-wrap gap-2 mb-4">
-								<span class={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(workOrder.status)}`}>
-									{workOrder.status.replace('-', ' ')}
+								<span class={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(issue.status)}`}>
+									{issue.status.replace('-', ' ')}
 								</span>
-								<span class={`px-3 py-1 rounded-full text-sm font-medium ${getPriorityColor(workOrder.priority)}`}>
-									{workOrder.priority}
+								<span class={`px-3 py-1 rounded-full text-sm font-medium ${getPriorityColor(issue.priority)}`}>
+									{issue.priority}
 								</span>
 							</div>
 						</div>
@@ -109,26 +76,26 @@ const getPriorityColor = (priority: string) => {
 					</div>
 
 					<div class="prose max-w-none mb-6">
-						<p class="text-gray-700 whitespace-pre-line">{workOrder.description}</p>
+						<p class="text-gray-700 whitespace-pre-line">{issue.description}</p>
 					</div>
 
 					<div class="border-t border-gray-200 pt-6">
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
 							<div>
 								<span class="font-medium text-gray-900">Created by:</span>
-								<span class="text-gray-600 ml-2">{workOrder.author}</span>
+								<span class="text-gray-600 ml-2">{issue.author}</span>
 							</div>
 							<div>
 								<span class="font-medium text-gray-900">Assigned to:</span>
-								<span class="text-gray-600 ml-2">{workOrder.assignedTo}</span>
+								<span class="text-gray-600 ml-2">{issue.assignedTo || 'Unassigned'}</span>
 							</div>
 							<div>
 								<span class="font-medium text-gray-900">Created:</span>
-								<span class="text-gray-600 ml-2">{workOrder.createdAt.toLocaleDateString()}</span>
+								<span class="text-gray-600 ml-2">{issue.createdAt.toLocaleDateString()}</span>
 							</div>
 							<div>
 								<span class="font-medium text-gray-900">Last updated:</span>
-								<span class="text-gray-600 ml-2">{workOrder.updatedAt.toLocaleDateString()}</span>
+								<span class="text-gray-600 ml-2">{issue.updatedAt ? issue.updatedAt.toLocaleDateString() : 'Not updated'}</span>
 							</div>
 						</div>
 					</div>
@@ -136,7 +103,7 @@ const getPriorityColor = (priority: string) => {
 
 				<!-- Comments Section -->
 				<div class="card">
-					<h2 class="text-xl font-semibold text-gray-900 mb-6">Comments ({workOrder.comments.length})</h2>
+					<h2 class="text-xl font-semibold text-gray-900 mb-6">Comments ({issue.comments.length})</h2>
 					
 					<!-- Add Comment Form -->
 					<div class="mb-8">
@@ -162,7 +129,7 @@ const getPriorityColor = (priority: string) => {
 
 					<!-- Comments List -->
 					<div class="space-y-6">
-						{workOrder.comments.map((comment) => (
+						{issue.comments.map((comment) => (
 							<div class="border-b border-gray-200 pb-6 last:border-b-0">
 								<div class="flex items-start space-x-3">
 									<div class="flex-shrink-0">

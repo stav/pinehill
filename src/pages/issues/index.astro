@@ -1,0 +1,108 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { SITE_TITLE } from '@/consts';
+import { issues, type Issue } from '@/data/issues';
+
+const getStatusColor = (status: string) => {
+	switch (status) {
+		case 'open': return 'bg-green-100 text-green-800';
+		case 'in-progress': return 'bg-blue-100 text-blue-800';
+		case 'completed': return 'bg-gray-100 text-gray-800';
+		case 'closed': return 'bg-red-100 text-red-800';
+		default: return 'bg-gray-100 text-gray-800';
+	}
+};
+
+const getPriorityColor = (priority: string) => {
+	switch (priority) {
+		case 'urgent': return 'bg-red-100 text-red-800';
+		case 'high': return 'bg-orange-100 text-orange-800';
+		case 'medium': return 'bg-yellow-100 text-yellow-800';
+		case 'low': return 'bg-green-100 text-green-800';
+		default: return 'bg-gray-100 text-gray-800';
+	}
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Issues - ${SITE_TITLE}`} description="View and manage issues for projects" />
+	</head>
+	<body>
+		<Header />
+		<main class="min-h-screen bg-gray-50 py-8">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<!-- Header -->
+				<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+					<div>
+						<h1 class="text-3xl font-bold text-gray-900">Issues</h1>
+						<p class="text-gray-600 mt-2">Track and manage project issues</p>
+					</div>
+					<a href="/blog/first-post" class="btn btn-primary mt-4 sm:mt-0">
+						Create Issue
+					</a>
+				</div>
+
+				<!-- Filters -->
+				
+
+				<!-- Issues List -->
+				<div class="space-y-4">
+					{issues.map((issue: Issue) => (
+						<div class="card hover:shadow-md transition-shadow">
+							<div class="flex flex-col sm:flex-row sm:items-center justify-between">
+								<div class="flex-1">
+									<div class="flex items-start justify-between">
+										<div class="flex-1">
+											<h3 class="text-lg font-semibold text-gray-900 mb-2">
+												<a href={`/issues/${issue.id}`} class="hover:text-primary-600">
+													{issue.title}
+												</a>
+											</h3>
+											<p class="text-gray-600 mb-3 line-clamp-2">
+												{issue.description}
+											</p>
+											<div class="flex flex-wrap gap-2 mb-3">
+												<span class={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(issue.status)}`}>
+													{issue.status.replace('-', ' ')}
+												</span>
+												<span class={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(issue.priority)}`}>
+													{issue.priority}
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="flex items-center text-sm text-gray-500">
+										<span>By {issue.author}</span>
+										<span class="mx-2">•</span>
+										<span>{issue.createdAt.toLocaleDateString()}</span>
+										<span class="mx-2">•</span>
+										<span>{issue.comments.length} comments</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Empty State -->
+				{issues.length === 0 && (
+					<div class="card text-center py-12">
+						<svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+						</svg>
+						<h3 class="text-lg font-medium text-gray-900 mb-2">No issues found</h3>
+						<p class="text-gray-600 mb-4">Get started by creating your first issue.</p>
+						<a href="/blog/first-post" class="btn btn-primary">
+							Create Issue
+						</a>
+					</div>
+				)}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html> 
