@@ -3,16 +3,16 @@ import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE_TITLE } from '@/consts';
-import { issues } from '@/data/issues';
+import { issues, type Comment, type Issue } from '@/data/issues';
 
 export async function getStaticPaths() {
-	return issues.map((issue) => ({
+	return issues.map((issue: Issue) => ({
 		params: { id: issue.id.toString() }
 	}));
 }
 
 const { id } = Astro.params;
-const issue = issues.find(issue => issue.id === parseInt(id!));
+const issue = issues.find((issue: Issue) => issue.id === parseInt(id!));
 
 if (!issue) {
 	return Astro.redirect('/issues');
@@ -105,37 +105,15 @@ const getPriorityColor = (priority: string) => {
 				<div class="card">
 					<h2 class="text-xl font-semibold text-gray-900 mb-6">Comments ({issue.comments.length})</h2>
 					
-					<!-- Add Comment Form -->
-					<div class="mb-8">
-						<form class="space-y-4">
-							<div>
-								<label for="comment" class="block text-sm font-medium text-gray-700 mb-2">
-									Add a comment
-								</label>
-								<textarea 
-									id="comment" 
-									rows="4" 
-									class="textarea"
-									placeholder="Share your thoughts, suggestions, or updates..."
-								></textarea>
-							</div>
-							<div class="flex justify-end">
-								<button type="submit" class="btn btn-primary">
-									Post Comment
-								</button>
-							</div>
-						</form>
-					</div>
-
 					<!-- Comments List -->
 					<div class="space-y-6">
-						{issue.comments.map((comment) => (
+						{issue.comments.map((comment: Comment) => (
 							<div class="border-b border-gray-200 pb-6 last:border-b-0">
 								<div class="flex items-start space-x-3">
 									<div class="flex-shrink-0">
 										<div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
 											<span class="text-sm font-medium text-primary-600">
-												{comment.author.split(' ').map(n => n[0]).join('')}
+												{comment.author.split(' ').map((n: string) => n[0]).join('')}
 											</span>
 										</div>
 									</div>
@@ -148,12 +126,12 @@ const getPriorityColor = (priority: string) => {
 										
 										{comment.replies.length > 0 && (
 											<div class="ml-6 space-y-4">
-												{comment.replies.map((reply) => (
+												{comment.replies.map((reply: Comment) => (
 													<div class="flex items-start space-x-3">
 														<div class="flex-shrink-0">
 															<div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
 																<span class="text-xs font-medium text-gray-600">
-																	{reply.author.split(' ').map(n => n[0]).join('')}
+																	{reply.author.split(' ').map((n: string) => n[0]).join('')}
 																</span>
 															</div>
 														</div>
@@ -169,9 +147,6 @@ const getPriorityColor = (priority: string) => {
 											</div>
 										)}
 										
-										<button class="text-sm text-primary-600 hover:text-primary-700 mt-2">
-											Reply
-										</button>
 									</div>
 								</div>
 							</div>
