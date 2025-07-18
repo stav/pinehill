@@ -1,16 +1,47 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+title: 'Welcome to Our Community Portal!'
+description: 'What great things shall we do!'
+pubDate: 'Jul 18 2022'
+# heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Hello neighbors,
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Welcome to our brand-new online community portal! This space was created just for us—to connect, share ideas, report issues, track progress, and stay informed about everything happening in our neighborhood. We're excited to kick things off and start building a more vibrant, collaborative community together.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+This portal is just getting started, and new features will be added soon. In the meantime, you can reach out anytime by emailing [steve@primesite.dev](mailto:steve@primesite.dev) with questions, ideas, or issues.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+### Let’s Talk Projects
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+This is your space—your ideas matter. Here are just a few projects we can begin discussing:
+
+* **Reimagining the Old Pool Area**
+  That empty grassy space deserves a fresh purpose. Maybe splinter-free picnic tables, a shaded gathering spot like a gazebo, a small community garden, a dog park, a kid's playground, or even a new pool. What do *you* want to see there?
+
+* **Improving Landscaping**
+  Our mulch beds are always dried out. Is mulch still the best option? What about decorative rock with proper weed barriers? Let’s explore low-maintenance, beautiful solutions.
+
+* **Curb Appeal**
+  The garbage trucks do not have enough space in these tight streets so they cut the corners over the curbs which get broken and then repaired and then broken again. This seems like a money sucking loop. Do we need to widen some of the turns or get smaller garbage trucks?
+
+* **Safer, Greener Grounds Maintenance**
+  What’s being sprayed around our homes? Are there safer, eco-friendly alternatives to the current chemicals? Let's look into the long-term effects and explore cleaner options.
+
+* **Tidying Up Utility Wires**
+  What’s with all the exposed wires? Can we find out who’s responsible, whether they’re needed, and if there are safer, more organized solutions?
+
+* **Leaky Gutters & Drainage**
+  Poor drainage and leaking gutters can cause big problems. Let’s get a handle on what needs fixing.
+
+* **Upgrading Air Conditioning**
+  Our all-in-one AC units are bulky, loud, and inefficient. Switching to modern external units could improve comfort, reduce noise, and save money.
+
+---
+
+This is just the beginning. Have an idea or concern? Post it here or email [steve@primesite.dev](mailto:steve@primesite.dev) to get it on our radar.
+
+[View and discuss current issues &rarr;](/issues)
+
+Together, we can make this community even better.
+
+—The Pine Hill Community Team
