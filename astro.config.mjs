@@ -12,4 +12,11 @@ export default defineConfig({
 		sitemap(), 
 		tailwind()
 	],
+	vite: {
+		resolve: {
+			alias: {
+				'@': new URL('./src', import.meta.url).pathname,
+			},
+		},
+	},
 });
