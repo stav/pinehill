@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Media files (self-hosted externally)
+public/media/
+*.webm
+*.mp4
+*.mov
+*.avi

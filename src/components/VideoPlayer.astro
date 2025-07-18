@@ -1,0 +1,45 @@
+---
+import { getVideoUrls } from '../config/media';
+
+interface Props {
+  baseName: string;
+  poster?: string;
+  width?: string;
+  height?: string;
+  controls?: boolean;
+  autoplay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  preload?: 'none' | 'metadata' | 'auto';
+}
+
+const {
+  baseName,
+  poster,
+  width = '100%',
+  height = 'auto',
+  controls = true,
+  autoplay = false,
+  loop = false,
+  muted = false,
+  preload = 'metadata'
+} = Astro.props;
+
+const videoUrls = getVideoUrls(baseName);
+
+---
+
+<video 
+  {controls}
+  {autoplay}
+  {loop}
+  {muted}
+  {preload}
+  {poster}
+  style={`width: ${width}; height: ${height};`}
+  class="rounded-lg shadow-sm"
+>
+  {videoUrls.webm && <source src={videoUrls.webm} type="video/webm">}
+  {videoUrls.mp4 && <source src={videoUrls.mp4} type="video/mp4">}
+  <p>Your browser does not support the video tag.</p>
+</video> 
