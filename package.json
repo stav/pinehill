@@ -1,5 +1,5 @@
 {
-  "name": "electrical-escape",
+  "name": "pinehill",
   "type": "module",
   "version": "0.0.1",
   "description": "A community portal for Pine Hill work orders and collaboration",
@@ -30,7 +30,7 @@
     "collaboration"
   ],
   "author": {
-    "name": "Electrical Escape Team"
+    "name": "Pine Hill Team"
   },
   "license": "MIT"
 }
