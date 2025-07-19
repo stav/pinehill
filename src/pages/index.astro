@@ -3,6 +3,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
+import mapDrawingArrow from '@/assets/map-drawing-arrow_ABC.png';
+
 ---
 
 <!doctype html>
@@ -84,6 +87,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 							</p>
 						</div>
 					</div>
+
+				<div class="flex justify-center mt-16">
+					<Image src={mapDrawingArrow} alt="Community map drawing with arrow" class="rounded-lg shadow-lg" />
+				</div>
 				</div>
 			</section>
 
