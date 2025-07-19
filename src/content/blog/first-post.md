@@ -15,25 +15,25 @@ This portal is just getting started, and new features will be added soon. In the
 
 This is your space—your ideas matter. Here are just a few projects we can begin discussing:
 
-* **Reimagining the Old Pool Area**
-  That empty grassy space deserves a fresh purpose. Maybe splinter-free picnic tables, a shaded gathering spot like a gazebo, a small community garden, a dog park, a kid's playground, or even a new pool. What do *you* want to see there?
+- **Reimagining the Old Pool Area**
+  That empty grassy space deserves a fresh purpose. Maybe splinter-free picnic tables, a shaded gathering spot like a gazebo, a small community garden, a dog park, a kid's playground, or even a new pool. What do _you_ want to see there?
 
-* **Improving Landscaping**
+- **Improving Landscaping**
   Our mulch beds are always dried out. Is mulch still the best option? What about decorative rock with proper weed barriers? Let’s explore low-maintenance, beautiful solutions.
 
-* **Curb Appeal**
+- **Curb Appeal**
   The garbage trucks do not have enough space in these tight streets so they cut the corners over the curbs which get broken and then repaired and then broken again. This seems like a money sucking loop. Do we need to widen some of the turns or get smaller garbage trucks?
 
-* **Safer, Greener Grounds Maintenance**
+- **Safer, Greener Grounds Maintenance**
   What’s being sprayed around our homes? Are there safer, eco-friendly alternatives to the current chemicals? Let's look into the long-term effects and explore cleaner options.
 
-* **Tidying Up Utility Wires**
+- **Tidying Up Utility Wires**
   What’s with all the exposed wires? Can we find out who’s responsible, whether they’re needed, and if there are safer, more organized solutions?
 
-* **Leaky Gutters & Drainage**
+- **Leaky Gutters & Drainage**
   Poor drainage and leaking gutters can cause big problems. Let’s get a handle on what needs fixing.
 
-* **Upgrading Air Conditioning**
+- **Upgrading Air Conditioning**
   Our all-in-one AC units are bulky, loud, and inefficient. Switching to modern external units could improve comfort, reduce noise, and save money.
 
 ---
