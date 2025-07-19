@@ -1,7 +1,7 @@
 ---
 title: 'Welcome to Our Community Portal!'
 description: 'What great things shall we do!'
-pubDate: 'Jul 18 2022'
+pubDate: 'Jul 01 2025'
 # heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 

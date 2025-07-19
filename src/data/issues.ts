@@ -33,7 +33,7 @@ export const issues: Issue[] = [
 		createdAt: "2025-07-15",
 		updatedAt: "2025-07-18",
 		blogPostId: "front-step-sloped",
-		locations: ["Front Entrance", "A-28"],
+		locations: ["Front Entrance", "A-28", "A-29"],
 		comments: [
 			{
 				id: 1,
@@ -67,18 +67,21 @@ export const issues: Issue[] = [
 		priority: "medium",
 		author: "Pine Hill Resident",
 		createdAt: "2025-07-12",
-		locations: ["Street", "A-28"],
+		blogPostId: "front-curb-dissolved",
+		locations: ["Street", "A-28", "A-29"],
 		comments: []
 	},
 	{
 		id: 3,
-		title: "Drain lines inspected - routine maintenance suggested by State Farm 2021",
-		description: "State Farm suggested routine maintenance inspection of drain lines in 2021. Need to schedule inspection to ensure proper drainage system function.",
+		title: "Drain lines inspected",
+		description: "State Farm suggested routine maintenance inspection of drain lines in 2021.",
 		status: "open",
 		priority: "medium",
-		author: "Pine Hill Resident",
+		author: "Steve Almeroth",
 		createdAt: "2025-07-10",
-		locations: ["Drainage System", "Front lawn", "A-28"],
+		updatedAt: "2025-07-18",
+		blogPostId: "drain-lines",
+		locations: ["Drainage System", "Front lawn", "A-28", "A-29"],
 		comments: []
 	},
 	{
