@@ -18,6 +18,7 @@ export interface Issue {
 	updatedAt?: string;
 	comments: Comment[];
 	blogPostId?: string; // Optional reference to a blog post
+	locations: string[]; // Array of location tags
 }
 
 export const issues: Issue[] = [
@@ -32,6 +33,7 @@ export const issues: Issue[] = [
 		createdAt: "2025-07-15",
 		updatedAt: "2025-07-18",
 		blogPostId: "front-step-sloped",
+		locations: ["Front Entrance", "A-28"],
 		comments: [
 			{
 				id: 1,
@@ -65,6 +67,7 @@ export const issues: Issue[] = [
 		priority: "medium",
 		author: "Pine Hill Resident",
 		createdAt: "2025-07-12",
+		locations: ["Street", "A-28"],
 		comments: []
 	},
 	{
@@ -75,6 +78,7 @@ export const issues: Issue[] = [
 		priority: "medium",
 		author: "Pine Hill Resident",
 		createdAt: "2025-07-10",
+		locations: ["Drainage System", "Front lawn", "A-28"],
 		comments: []
 	},
 	{
@@ -85,6 +89,7 @@ export const issues: Issue[] = [
 		priority: "low",
 		author: "Pine Hill Resident",
 		createdAt: "2025-07-08",
+		locations: ["Balcony", "A-28"],
 		comments: []
 	},
 	{
@@ -95,6 +100,7 @@ export const issues: Issue[] = [
 		priority: "low",
 		author: "Pine Hill Resident",
 		createdAt: "2025-07-05",
+		locations: ["Balcony", "A-28"],
 		comments: []
 	}
 ]; 
