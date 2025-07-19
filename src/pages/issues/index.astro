@@ -47,20 +47,20 @@ const blogPostsMap = new Map(blogPosts.map(post => [post.id, post]));
 								<div class="flex gap-4">
 									{/* Thumbnail Image */}
 									{relatedBlogPost?.data.heroImage ? (
-										<div class="flex-shrink-0">
-											<a href={`/blog/${relatedBlogPost.id}/`} class="block">
+										<div class="flex-shrink-0 w-32 h-32 overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+											<a href={`/blog/${relatedBlogPost.id}/`} class="block w-full h-full">
 												<Image 
 													src={relatedBlogPost.data.heroImage} 
 													alt={`Hero image for ${relatedBlogPost.data.title}`}
-													width={80} 
-													height={80} 
-													class="w-20 h-20 object-cover rounded-lg border border-gray-200 hover:opacity-80 transition-opacity"
+													width={128} 
+													height={128} 
+													class="w-full h-full object-cover hover:opacity-80 transition-opacity"
 												/>
 											</a>
 										</div>
 									) : (
-										<div class="flex-shrink-0 w-20 h-20 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
-											<svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<div class="flex-shrink-0 w-32 h-32 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
+											<svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
 											</svg>
 										</div>
