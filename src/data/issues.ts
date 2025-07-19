@@ -114,4 +114,17 @@ export const issues: Issue[] = [
     locations: ['Balcony', 'A-28'],
     comments: [],
   },
+  {
+    id: 6,
+    title: 'Loose wires sticking out of the wire containers',
+    description:
+      'There are loose wires protruding from the wire "pill" containers around the property.',
+    status: 'open',
+    priority: 'medium',
+    author: 'Steve Almeroth',
+    createdAt: '2025-07-19',
+    blogPostId: 'loose-wires',
+    locations: ['Electrical', 'A-28', 'A-29'],
+    comments: [],
+  },
 ];
