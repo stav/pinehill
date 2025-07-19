@@ -64,6 +64,32 @@ export const issues: Issue[] = [
     ],
   },
   {
+    id: 6,
+    title: 'Loose wires sticking out of the wire containers',
+    description:
+      'There are loose wires protruding from the wire "pill" containers around the property.',
+    status: 'open',
+    priority: 'medium',
+    author: 'Steve Almeroth',
+    createdAt: '2025-07-19',
+    blogPostId: 'loose-wires',
+    locations: ['Electrical', 'All units'],
+    comments: [],
+  },
+  {
+    id: 7,
+    title: 'Landscape spraying - chemical monitoring and safety analysis',
+    description:
+      'Need to monitor and analyze the chemicals being sprayed on and near our homes. Require ingredient disclosure for toxicology study to determine effects on vulnerable populations: children, elderly, and pets.',
+    status: 'open',
+    priority: 'high',
+    author: 'Steve Almeroth',
+    createdAt: '2025-07-19',
+    blogPostId: 'landscape-spraying',
+    locations: ['Landscaping', 'All units'],
+    comments: [],
+  },
+  {
     id: 2,
     title: 'Curb out front - dissolved after winter install',
     description:
@@ -112,19 +138,6 @@ export const issues: Issue[] = [
     author: 'Pine Hill Resident',
     createdAt: '2025-07-05',
     locations: ['Balcony', 'A-28'],
-    comments: [],
-  },
-  {
-    id: 6,
-    title: 'Loose wires sticking out of the wire containers',
-    description:
-      'There are loose wires protruding from the wire "pill" containers around the property.',
-    status: 'open',
-    priority: 'medium',
-    author: 'Steve Almeroth',
-    createdAt: '2025-07-19',
-    blogPostId: 'loose-wires',
-    locations: ['Electrical', 'A-28', 'A-29'],
     comments: [],
   },
 ];
